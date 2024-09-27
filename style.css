@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  top: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in width */
+  position: fixed;
+  background-color: #1e6af8;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  cursor: pointer;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.Tambah-buku {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 153, 255);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset;
+  margin-top: 100px;
+  justify-content: space-between;
+}
+
+#bookFormSubmit {
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgb(56, 235, 56);
+  font-weight: bold;
+}
+
+#bookFormSubmit:hover {
+  background-color: rgb(0, 153, 255);
+}
+.Cari-buku {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgb(0, 153, 255);
+}
+#searchSubmit {
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgb(56, 235, 56);
+  font-weight: bold;
+}
+#searchSubmit:hover {
+  background-color: rgb(0, 153, 255);
+}
+.Belum-selesai-dibaca {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 153, 255);
+}
+#incompleteBookList {
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.book-card {
+  width: 300px;
+  border: 1px solid black;
+}
+.Selesai-dibaca {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 153, 255);
+  margin-bottom: 20px;
+}
+#completeBookList{
+    overflow-y: scroll;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
