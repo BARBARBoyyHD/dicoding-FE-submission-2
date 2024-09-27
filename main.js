@@ -67,40 +67,40 @@ function renderSearchResults(books) {
   }
   books.forEach((book) => {
     const bookItem = document.createElement("div");
-    bookItem.dataset.bookid = book.id;
-    bookItem.dataset.testid = "bookItem";
+    bookItem.setAttribute("data-testid","bookItemTitle")
+    bookItem.setAttribute("data-testid", "bookItem");
 
     const bookItemTitle = document.createElement("h3");
-    bookItemTitle.dataset.testid = "bookItemTitle";
+    bookItemTitle.setAttribute("data-testid", "bookItemTitle");
     bookItemTitle.textContent = book.title;
     bookItem.appendChild(bookItemTitle);
 
     const bookItemAuthor = document.createElement("p");
-    bookItemAuthor.dataset.testid = "bookItemAuthor";
+    bookItemAuthor.setAttribute("data-testid", "bookItemAuthor");
     bookItemAuthor.textContent = `Penulis: ${book.author}`;
     bookItem.appendChild(bookItemAuthor);
 
     const bookItemYear = document.createElement("p");
-    bookItemYear.dataset.testid = "bookItemYear";
+    bookItemYear.setAttribute("data-testid", "bookItemYear");
     bookItemYear.textContent = `Tahun: ${book.year}`;
     bookItem.appendChild(bookItemYear);
 
     const buttonContainer = document.createElement("div");
 
     const bookItemIsCompleteButton = document.createElement("button");
-    bookItemIsCompleteButton.dataset.testid = "bookItemIsCompleteButton";
+    bookItemIsCompleteButton.setAttribute("data-testid", "bookItemIsCompleteButton");
     bookItemIsCompleteButton.textContent = book.isComplete
       ? "Ubah kondisi"
       : "Selesai Dibaca";
     buttonContainer.appendChild(bookItemIsCompleteButton);
 
     const bookItemDeleteButton = document.createElement("button");
-    bookItemDeleteButton.dataset.testid = "bookItemDeleteButton";
+    bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");
     bookItemDeleteButton.textContent = "Hapus";
     buttonContainer.appendChild(bookItemDeleteButton);
 
     const bookItemEditButton = document.createElement("button");
-    bookItemEditButton.dataset.testid = "bookItemEditButton";
+    bookItemEditButton.setAttribute("data-testid", "bookItemEditButton");
     bookItemEditButton.textContent = "Edit";
     buttonContainer.appendChild(bookItemEditButton);
 
@@ -133,33 +133,33 @@ function renderIncompleteBookList() {
   books.forEach((book) => {
     if (!book.isComplete) {
       const bookItem = document.createElement("div");
-      bookItem.dataset.bookid = book.id;
-      bookItem.dataset.testid = "bookItem";
+      bookItem.setAttribute("data-testid","bookItemTitle")
+      bookItem.setAttribute("data-testid", "bookItem");
 
       const bookItemTitle = document.createElement("h3");
-      bookItemTitle.dataset.testid = "bookItemTitle";
+      bookItemTitle.setAttribute("data-testid", "bookItemTitle");
       bookItemTitle.textContent = book.title;
       bookItem.appendChild(bookItemTitle);
 
       const bookItemAuthor = document.createElement("p");
-      bookItemAuthor.dataset.testid = "bookItemAuthor";
+      bookItemAuthor.setAttribute("data-testid", "bookItemAuthor");
       bookItemAuthor.textContent = `Penulis: ${book.author}`;
       bookItem.appendChild(bookItemAuthor);
 
       const bookItemYear = document.createElement("p");
-      bookItemYear.dataset.testid = "bookItemYear";
+      bookItemYear.setAttribute("data-testid", "bookItemYear");
       bookItemYear.textContent = `Tahun: ${book.year}`;
       bookItem.appendChild(bookItemYear);
 
       const buttonContainer = document.createElement("div");
 
       const bookItemIsCompleteButton = document.createElement("button");
-      bookItemIsCompleteButton.dataset.testid = "bookItemIsCompleteButton";
+      bookItemIsCompleteButton.setAttribute("data-testid", "bookItemIsCompleteButton");
       bookItemIsCompleteButton.textContent = "Selesai Dibaca";
       buttonContainer.appendChild(bookItemIsCompleteButton);
 
       const bookItemDeleteButton = document.createElement("button");
-      bookItemDeleteButton.dataset.testid = "bookItemDeleteButton";
+      bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");	
       bookItemDeleteButton.textContent = "Hapus";
       buttonContainer.appendChild(bookItemDeleteButton);
 
@@ -179,7 +179,7 @@ function renderIncompleteBookList() {
       });
 
       const bookItemEditButton = document.createElement("button");
-      bookItemEditButton.dataset.testid = "bookItemEditButton";
+      bookItemEditButton.setAttribute("data-testid","bookItemEditButton");
       bookItemEditButton.textContent = "Edit";
       buttonContainer.appendChild(bookItemEditButton);
 
@@ -198,38 +198,38 @@ function renderCompleteBook() {
   books.forEach((book) => {
     if (book.isComplete) {
       const bookItem = document.createElement("div");
-      bookItem.dataset.bookid = book.id;
-      bookItem.dataset.testid = "bookItem";
+      bookItem.setAttribute("data-testid","bookItemTitle")
+      bookItem.setAttribute("data-testid", "bookItem");
 
       const bookItemTitle = document.createElement("h3");
-      bookItemTitle.dataset.testid = "bookItemTitle";
+      bookItemTitle.setAttribute("data-testid", "bookItemTitle");
       bookItemTitle.textContent = book.title;
       bookItem.appendChild(bookItemTitle);
 
       const bookItemAuthor = document.createElement("p");
-      bookItemAuthor.dataset.testid = "bookItemAuthor";
+      bookItemAuthor.setAttribute("data-testid", "bookItemAuthor");
       bookItemAuthor.textContent = `Penulis: ${book.author}`;
       bookItem.appendChild(bookItemAuthor);
 
       const bookItemYear = document.createElement("p");
-      bookItemYear.dataset.testid = "bookItemYear";
+      bookItemYear.setAttribute("data-testid", "bookItemYear");
       bookItemYear.textContent = `Tahun: ${book.year}`;
       bookItem.appendChild(bookItemYear);
 
       const buttonContainer = document.createElement("div");
 
       const bookItemIsCompleteButton = document.createElement("button");
-      bookItemIsCompleteButton.dataset.testid = "bookItemIsCompleteButton";
+      bookItemIsCompleteButton.setAttribute("data-testid", "bookItemIsCompleteButton");
       bookItemIsCompleteButton.textContent = "Ubah kondisi";
       buttonContainer.appendChild(bookItemIsCompleteButton);
 
       const bookItemDeleteButton = document.createElement("button");
-      bookItemDeleteButton.dataset.testid = "bookItemDeleteButton";
+      bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");	
       bookItemDeleteButton.textContent = "Hapus";
       buttonContainer.appendChild(bookItemDeleteButton);
 
       const bookItemEditButton = document.createElement("button");
-      bookItemEditButton.dataset.testid = "bookItemEditButton";
+      bookItemEditButton.setAttribute("data-testid","bookItemEditButton");
       bookItemEditButton.textContent = "Edit";
       buttonContainer.appendChild(bookItemEditButton);
 
