@@ -12,9 +12,6 @@ const searchForm = document.getElementById("searchBook");
 const searchInput = document.getElementById("searchBookTitle");
 const searchSubmit = document.getElementById("searchSubmit");
 
-const deleteButton = document.querySelector(
-  '[data-testid="bookItemDeleteButton"]'
-);
 let books = [];
 
 const storedBooks = localStorage.getItem("books");
@@ -28,7 +25,7 @@ bookSubmit.addEventListener("click", (e) => {
     id: Date.now(),
     title: bookTitle.value,
     author: bookAuthor.value,
-    year: bookYear.value,
+    year: parseInt(bookYear.value),
     isComplete: bookIsComplete.checked,
   };
 
@@ -39,13 +36,10 @@ bookSubmit.addEventListener("click", (e) => {
   renderIncompleteBookList();
   renderCompleteBook();
 
-  // Clear the form fields
   bookTitle.value = "";
   bookAuthor.value = "";
   bookYear.value = "";
   bookIsComplete.checked = false;
-
-  // Render the incomplete book list
 });
 
 searchForm.addEventListener("submit", (e) => {
@@ -67,8 +61,8 @@ function renderSearchResults(books) {
   }
   books.forEach((book) => {
     const bookItem = document.createElement("div");
-    bookItem.setAttribute("data-testid","bookItemTitle")
-    bookItem.setAttribute("data-testid", "bookItem");
+    bookItem.setAttribute("data-bookid", book.id);
+    bookItem.setAttribute("data-bookid", book.id);
 
     const bookItemTitle = document.createElement("h3");
     bookItemTitle.setAttribute("data-testid", "bookItemTitle");
@@ -88,7 +82,10 @@ function renderSearchResults(books) {
     const buttonContainer = document.createElement("div");
 
     const bookItemIsCompleteButton = document.createElement("button");
-    bookItemIsCompleteButton.setAttribute("data-testid", "bookItemIsCompleteButton");
+    bookItemIsCompleteButton.setAttribute(
+      "data-testid",
+      "bookItemIsCompleteButton"
+    );
     bookItemIsCompleteButton.textContent = book.isComplete
       ? "Ubah kondisi"
       : "Selesai Dibaca";
@@ -128,13 +125,14 @@ function renderSearchResults(books) {
     document.getElementById("searchResults").appendChild(bookItem);
   });
 }
+
 function renderIncompleteBookList() {
   incompleteBookList.innerHTML = "";
   books.forEach((book) => {
     if (!book.isComplete) {
       const bookItem = document.createElement("div");
-      bookItem.setAttribute("data-testid","bookItemTitle")
-      bookItem.setAttribute("data-testid", "bookItem");
+      bookItem.setAttribute("data-testid", "bookItemTitle");
+      bookItem.setAttribute("data-bookid", book.id);
 
       const bookItemTitle = document.createElement("h3");
       bookItemTitle.setAttribute("data-testid", "bookItemTitle");
@@ -154,12 +152,15 @@ function renderIncompleteBookList() {
       const buttonContainer = document.createElement("div");
 
       const bookItemIsCompleteButton = document.createElement("button");
-      bookItemIsCompleteButton.setAttribute("data-testid", "bookItemIsCompleteButton");
+      bookItemIsCompleteButton.setAttribute(
+        "data-testid",
+        "bookItemIsCompleteButton"
+      );
       bookItemIsCompleteButton.textContent = "Selesai Dibaca";
       buttonContainer.appendChild(bookItemIsCompleteButton);
 
       const bookItemDeleteButton = document.createElement("button");
-      bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");	
+      bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");
       bookItemDeleteButton.textContent = "Hapus";
       buttonContainer.appendChild(bookItemDeleteButton);
 
@@ -179,7 +180,7 @@ function renderIncompleteBookList() {
       });
 
       const bookItemEditButton = document.createElement("button");
-      bookItemEditButton.setAttribute("data-testid","bookItemEditButton");
+      bookItemEditButton.setAttribute("data-testid", "bookItemEditButton");
       bookItemEditButton.textContent = "Edit";
       buttonContainer.appendChild(bookItemEditButton);
 
@@ -198,8 +199,8 @@ function renderCompleteBook() {
   books.forEach((book) => {
     if (book.isComplete) {
       const bookItem = document.createElement("div");
-      bookItem.setAttribute("data-testid","bookItemTitle")
-      bookItem.setAttribute("data-testid", "bookItem");
+      bookItem.setAttribute("data-testid", "bookItemTitle");
+      bookItem.setAttribute("data-bookid", book.id);
 
       const bookItemTitle = document.createElement("h3");
       bookItemTitle.setAttribute("data-testid", "bookItemTitle");
@@ -219,17 +220,20 @@ function renderCompleteBook() {
       const buttonContainer = document.createElement("div");
 
       const bookItemIsCompleteButton = document.createElement("button");
-      bookItemIsCompleteButton.setAttribute("data-testid", "bookItemIsCompleteButton");
+      bookItemIsCompleteButton.setAttribute(
+        "data-testid",
+        "bookItemIsCompleteButton"
+      );
       bookItemIsCompleteButton.textContent = "Ubah kondisi";
       buttonContainer.appendChild(bookItemIsCompleteButton);
 
       const bookItemDeleteButton = document.createElement("button");
-      bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");	
+      bookItemDeleteButton.setAttribute("data-testid", "bookItemDeleteButton");
       bookItemDeleteButton.textContent = "Hapus";
       buttonContainer.appendChild(bookItemDeleteButton);
 
       const bookItemEditButton = document.createElement("button");
-      bookItemEditButton.setAttribute("data-testid","bookItemEditButton");
+      bookItemEditButton.setAttribute("data-testid", "bookItemEditButton");
       bookItemEditButton.textContent = "Edit";
       buttonContainer.appendChild(bookItemEditButton);
 
